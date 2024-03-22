@@ -6,6 +6,10 @@ class Load extends Phaser.Scene {
     preload() {
         // loading bar
 
+        // load fonts
+        this.load.bitmapFont('HNR1', './assets/fonts/HNR1.png', './assets/fonts/HNR1.xml')
+        this.load.bitmapFont('HNR2', './assets/fonts/HNR2.png', './assets/fonts/HNR2.xml')
+        this.load.bitmapFont('HNR3', './assets/fonts/HNR3.png', './assets/fonts/HNR3.xml')
         // load images
         this.load.image('space', 'assets/images/space.png')
         // load spritesheets
