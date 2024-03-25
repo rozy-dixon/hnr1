@@ -7,6 +7,7 @@ class Type extends Phaser.Scene {
         // running checks
         console.log('%cTYPE SCENE :^)', "color: #cfd1af")
 
+        // temp, make the pixels easier to see
         this.cameras.main.setBackgroundColor('#FFFFFF')
 
         // keys
@@ -19,6 +20,7 @@ class Type extends Phaser.Scene {
     }
 
     update() {
+        // slight difference font key
         switch(Math.floor(Math.random() * 3)) {
             case(0): this.map = 'HNR1'
                 break
@@ -27,11 +29,89 @@ class Type extends Phaser.Scene {
             case(2): this.map = 'HNR3'
                 break
         }
+
+        // typing position config
         if(this.posX == 289) { this.posY += 14; this.posX = 1 }
         if(this.posX == 145 && this.posY == 43) {
 
         } else {
             this.type()
+        }
+        this.untype()
+    }
+
+    press(key) {
+        key.y++
+    }
+
+    release(key) {
+        key.y--
+    }
+
+    untype() {
+        switch(true) {
+            case Phaser.Input.Keyboard.JustUp(keyA): this.release(this.A)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyB): this.release(this.B)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyC): this.release(this.C)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyD): this.release(this.D)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyE): this.release(this.E)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyF): this.release(this.F)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyG): this.release(this.G)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyH): this.release(this.H)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyI): this.release(this.I)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyJ): this.release(this.J)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyK): this.release(this.K)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyL): this.release(this.L)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyM): this.release(this.M)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyN): this.release(this.N)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyO): this.release(this.O)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyP): this.release(this.P)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyQ): this.release(this.Q)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyR): this.release(this.R)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyS): this.release(this.S)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyT): this.release(this.T)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyU): this.release(this.U)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyV): this.release(this.V)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyW): this.release(this.W)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyX): this.release(this.X)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyY): this.release(this.Y)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyZ): this.release(this.Z)
+                break
+            case Phaser.Input.Keyboard.JustUp(keySPACE): this.release(this.SPACE)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyPERIOD): this.release(this.PERIOD)
+                break
+            case Phaser.Input.Keyboard.JustUp(keyCOMMA): this.release(this.COMMA)
+                break
+            case Phaser.Input.Keyboard.JustUp(keySLASH): this.release(this.SLASH)
+                break
+            case Phaser.Input.Keyboard.JustUp(keySEMICOLON): this.release(this.SEMICOLON)
+                break
         }
     }
 
@@ -40,126 +120,157 @@ class Type extends Phaser.Scene {
             case Phaser.Input.Keyboard.JustDown(keyA):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'A', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.A)
                 break
             case Phaser.Input.Keyboard.JustDown(keyB):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'B', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.B)
                 break
             case Phaser.Input.Keyboard.JustDown(keyC):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'C', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.C)
                 break
             case Phaser.Input.Keyboard.JustDown(keyD):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'D', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.D)
                 break
             case Phaser.Input.Keyboard.JustDown(keyE):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'E', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.E)
                 break
             case Phaser.Input.Keyboard.JustDown(keyF):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'F', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.F)
                 break
             case Phaser.Input.Keyboard.JustDown(keyG):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'G', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.G)
                 break
             case Phaser.Input.Keyboard.JustDown(keyH):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'H', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.H)
                 break
             case Phaser.Input.Keyboard.JustDown(keyI):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'I', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.I)
                 break
             case Phaser.Input.Keyboard.JustDown(keyJ):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'J', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.J)
                 break
             case Phaser.Input.Keyboard.JustDown(keyK):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'K', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.K)
                 break
             case Phaser.Input.Keyboard.JustDown(keyL):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'L', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.L)
                 break
             case Phaser.Input.Keyboard.JustDown(keyM):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'M', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.M)
                 break
             case Phaser.Input.Keyboard.JustDown(keyN):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'N', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.N)
                 break
             case Phaser.Input.Keyboard.JustDown(keyO):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'O', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.O)
                 break
             case Phaser.Input.Keyboard.JustDown(keyP):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'P', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.P)
                 break
             case Phaser.Input.Keyboard.JustDown(keyQ):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'Q', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.Q)
                 break
             case Phaser.Input.Keyboard.JustDown(keyR):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'R', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.R)
                 break
             case Phaser.Input.Keyboard.JustDown(keyS):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'S', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.S)
                 break
             case Phaser.Input.Keyboard.JustDown(keyT):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'T', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.T)
                 break
             case Phaser.Input.Keyboard.JustDown(keyU):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'U', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.U)
                 break
             case Phaser.Input.Keyboard.JustDown(keyV):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'V', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.V)
                 break
             case Phaser.Input.Keyboard.JustDown(keyW):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'W', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.W)
                 break
             case Phaser.Input.Keyboard.JustDown(keyX):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'X', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.X)
                 break
             case Phaser.Input.Keyboard.JustDown(keyY):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'Y', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.Y)
                 break
             case Phaser.Input.Keyboard.JustDown(keyZ):
                 this.add.bitmapText(this.posX, this.posY, this.map, 'Z', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.Z)
                 break
             case Phaser.Input.Keyboard.JustDown(keySPACE):
                 this.add.bitmapText(this.posX, this.posY, this.map, ' ', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.SPACE)
                 break
             case Phaser.Input.Keyboard.JustDown(keyPERIOD):
                 this.add.bitmapText(this.posX, this.posY, this.map, '.', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.PERIOD)
                 break
             case Phaser.Input.Keyboard.JustDown(keyCOMMA):
                 this.add.bitmapText(this.posX, this.posY, this.map, ',', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.COMMA)
                 break
             case Phaser.Input.Keyboard.JustDown(keySLASH):
                 this.add.bitmapText(this.posX, this.posY, this.map, '/', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.SLASH)
                 break
             case Phaser.Input.Keyboard.JustDown(keySEMICOLON):
                 this.add.bitmapText(this.posX, this.posY, this.map, ';', 14).setOrigin(0)
                 this.posX += 12
+                this.press(this.SEMICOLON)
                 break
         }
     }
